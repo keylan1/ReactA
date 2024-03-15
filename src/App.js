@@ -7,9 +7,12 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setName('');
+
     console.log(`Form submitted ${name}`);
+    // setName('');
   };
+
+  console.log(name);
 
   return (
     <div className="App">
@@ -31,7 +34,7 @@ function App() {
           </button>
         </fieldset>
       </form>
-      <App1 />
+      <App1 name={name} />
     </div>
   );
 }
