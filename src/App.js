@@ -1,5 +1,6 @@
 import './App.css';
 import App1 from './App1';
+import RegForm from './registration-form';
 import { useState } from 'react';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         </fieldset>
       </form>
       <App1 name={name} />
+      <RegForm />
     </div>
   );
 }
