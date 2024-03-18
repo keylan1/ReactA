@@ -1,7 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
 import { LoginContext } from '../context/LoginContext';
-import Form from './Form';
 
 function Profile() {
   const { username, setShowProfile } = useContext(LoginContext);
