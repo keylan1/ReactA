@@ -6,6 +6,7 @@ import { createContext, useState } from 'react';
 // simple switch package
 import ReactSwitch from 'react-switch';
 import Test from './components/test';
+import AppTest from './components/test1';
 
 export const ThemeContext = createContext(null);
 
@@ -26,7 +27,7 @@ function App() {
           value={{ username, setUsername, setShowProfile }}>
           {showProfile ? <Profile /> : <Form />}
         </LoginContext.Provider>
-        <Test />
+        {/*<Test />*/}
         <div className="switch">
           <label>{theme === 'light' ? 'Light Mode' : 'Dark Mode'}</label>
           <ReactSwitch onChange={toggleTheme} checked={theme === 'dark'} />
