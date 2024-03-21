@@ -17,16 +17,15 @@ To use the application, follow these steps:
 3. Install dependencies by running `npm install`.
 4. Start the development server with `npm start`.
 
-## Author
-
-[Your Name]
-
 ## Credit
 
 Login Page UI CSS from:
 Khaled Mneimneh
 @Devel0per95
 https://codepen.io/Devel0per95/pen/rjOpdx
+
+PedroTech Youtube
+Theme and Login Context API tutorials
 
 ## License
 
