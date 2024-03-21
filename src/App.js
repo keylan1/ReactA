@@ -5,8 +5,6 @@ import './App.css';
 import { createContext, useState } from 'react';
 // simple switch package
 import ReactSwitch from 'react-switch';
-import Test from './components/test';
-import AppTest from './components/test1';
 
 export const ThemeContext = createContext(null);
 
