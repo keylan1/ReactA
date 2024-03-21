@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+import Form from './components/Form';
+import Profile from './components/Profile';
+import { LoginContext } from './context/LoginContext';
 import './App.css';
+import { createContext, useState } from 'react';
+// simple switch package
+import ReactSwitch from 'react-switch';
 
+export const ThemeContext = createContext(null);
+
+// id value (light or dark) sets the light mode in the UI, requires toggling
 function App() {
+  const [theme, setTheme] = useState('light');
+  const [username, setUsername] = useState('');
+  const [showProfile, setShowProfile] = useState(false);
+
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === 'light' ? 'dark' : 'light'));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <div className="App" id={theme}>
+        <LoginContext.Provider
+          value={{ username, setUsername, setShowProfile }}>
+          {showProfile ? <Profile /> : <Form />}
+        </LoginContext.Provider>
+        {/*<Test />*/}
+        <div className="switch">
+          <label>{theme === 'light' ? 'Light Mode' : 'Dark Mode'}</label>
+          <ReactSwitch onChange={toggleTheme} checked={theme === 'dark'} />
+        </div>
+      </div>
+    </ThemeContext.Provider>
   );
 }
 
