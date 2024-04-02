@@ -23,7 +23,7 @@ function App() {
       <div className="App" id={theme}>
         <LoginContext.Provider
           value={{ username, setUsername, setShowProfile }}>
-          {showProfile ? <Profile /> : <Form />}
+          {showProfile ? <Profile theme={theme} /> : <Form />}
         </LoginContext.Provider>
         {/*<Test />*/}
         <div className="switch">

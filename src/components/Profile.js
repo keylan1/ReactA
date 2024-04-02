@@ -1,9 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from 'react-modal';
 import { useContext } from 'react';
 import { LoginContext } from '../context/LoginContext';
 
-function Profile() {
+const Button = ({ children, backgroundColor, onClick }) => {
+  return (
+    <button style={{ backgroundColor }} onClick={onClick}>
+      {children}
+    </button>
+  );
+};
+
+/*const modalStyle = {
+  content: {
+    innerHeight: '60%',
+    innerWidth: '60%',
+  },
+};*/
+
+function Profile(props) {
   const { username, setShowProfile } = useContext(LoginContext);
+  const [modal, setModal] = useState(false);
+
+  const handleModalOpen = () => {
+    setModal(true);
+  };
+
+  const handleModalClose = () => {
+    setModal(false);
+  };
+
+  const confirmDelete = () => {
+    handleModalClose();
+  };
 
   return (
     <>
@@ -12,6 +41,30 @@ function Profile() {
       <button type="submit" onClick={() => setShowProfile(false)}>
         Go back
       </button>
+      <br />
+      <button
+        style={{
+          color: 'white',
+          backgroundColor: props.theme === 'dark' ? 'green' : 'black',
+        }}
+        onClick={() => {
+          alert('Look behind you!');
+        }}>
+        Secret button, beware
+      </button>
+      <Button backgroundColor="red" onClick={handleModalOpen}>
+        Delete Account
+      </Button>
+      <Modal
+        //style={modalStyle}
+        isOpen={modal}
+        onRequestClose={handleModalClose}
+        contentLabel="Delete Confirmation">
+        <Button backgroundColor="red" onClick={confirmDelete}>
+          Confirm
+        </Button>
+        <Button onClick={handleModalClose}>Cancel</Button>
+      </Modal>
     </>
   );
 }
