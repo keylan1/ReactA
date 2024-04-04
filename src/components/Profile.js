@@ -11,13 +11,6 @@ const Button = ({ children, backgroundColor, onClick }) => {
   );
 };
 
-/*const modalStyle = {
-  content: {
-    innerHeight: '60%',
-    innerWidth: '60%',
-  },
-};*/
-
 function Profile(props) {
   const { username, setShowProfile } = useContext(LoginContext);
   const [modal, setModal] = useState(false);
