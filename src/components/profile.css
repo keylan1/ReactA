@@ -1,0 +1,11 @@
+.custom-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.custom-modal {
+  width: 300px;
+  /* Adjust the width as needed */
+  height: 200px;
+  /* Adjust the height as needed */
+  /* Other modal styles */
+}

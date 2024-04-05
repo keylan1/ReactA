@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import './profile.css';
 import { useContext } from 'react';
 import { LoginContext } from '../context/LoginContext';
 
@@ -34,8 +35,9 @@ function Profile(props) {
       <button type="submit" onClick={() => setShowProfile(false)}>
         Go back
       </button>
-      <br />
+
       <button
+        className="button-profile"
         style={{
           color: 'white',
           backgroundColor: props.theme === 'dark' ? 'green' : 'black',
@@ -45,11 +47,14 @@ function Profile(props) {
         }}>
         Secret button, beware
       </button>
-      <Button backgroundColor="red" onClick={handleModalOpen}>
+      <Button
+        //backgroundColor="red"
+        onClick={handleModalOpen}>
         Delete Account
       </Button>
       <Modal
-        //style={modalStyle}
+        //className="custom-modal"
+        overlayClassName="custom-overlay"
         isOpen={modal}
         onRequestClose={handleModalClose}
         contentLabel="Delete Confirmation">
