@@ -4,6 +4,17 @@ import './profile.css';
 import { useContext } from 'react';
 import { LoginContext } from '../context/LoginContext';
 
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+  },
+};
+
 const Button = ({ children, backgroundColor, onClick }) => {
   return (
     <button style={{ backgroundColor }} onClick={onClick}>
@@ -53,6 +64,7 @@ function Profile(props) {
         Delete Account
       </Button>
       <Modal
+        style={customStyles}
         //className="custom-modal"
         overlayClassName="custom-overlay"
         isOpen={modal}
