@@ -65,7 +65,6 @@ function Profile(props) {
       </Button>
       <Modal
         style={customStyles}
-        //className="custom-modal"
         overlayClassName="custom-overlay"
         isOpen={modal}
         onRequestClose={handleModalClose}
