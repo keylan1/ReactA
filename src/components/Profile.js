@@ -58,11 +58,7 @@ function Profile(props) {
         }}>
         Secret button, beware
       </button>
-      <Button
-        //backgroundColor="red"
-        onClick={handleModalOpen}>
-        Delete Account
-      </Button>
+      <Button onClick={handleModalOpen}>Delete Account</Button>
       <Modal
         style={customStyles}
         overlayClassName="custom-overlay"
