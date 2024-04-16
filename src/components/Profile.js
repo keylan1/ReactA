@@ -51,7 +51,7 @@ function Profile(props) {
         className="button-profile"
         style={{
           color: 'white',
-          backgroundColor: props.theme === 'dark' ? 'green' : 'black',
+          backgroundColor: props.theme === 'dark' ? 'green' : 'pink',
         }}
         onClick={() => {
           alert('Look behind you!');
